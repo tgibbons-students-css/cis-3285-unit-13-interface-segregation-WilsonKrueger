@@ -14,12 +14,18 @@ namespace Chapter8Basis
         static void Main(string[] args)
         {
 
+            Order order = new Order();
+            order.product = "Candy Cane";
+            order.amount = 12;
+            
 
             Console.WriteLine("=========CreateSeparateServices=========");
             OrderController sep = CreateSeparateServices();
+            sep.CreateOrder(order);
 
             Console.WriteLine("=========CreateSingleService=========");
             OrderController sing = CreateSingleService();
+            sing.CreateOrder(order);
 
             Console.WriteLine("=========GenericController<Order>=========");
             GenericController<Order> generic = CreateGenericServices();
